@@ -21,6 +21,12 @@ return {
       picker = {
         hidden = true,
         ignored = true,
+        finder = {
+          ignore_patterns = {
+            "node_modules",
+            ".git",
+          },
+        },
         sources = {
           files = {
             hidden = true,
@@ -31,7 +37,38 @@ return {
     },
   },
   -- Augment CLI
+  -- {
+  -- "augmentcode/augment.vim",
+  -- },
+  -- Mermaid Playground
   {
-    "augmentcode/augment.vim",
+    "selimacerbas/mermaid-playground.nvim",
+    dependencies = { "barrett-ruth/live-server.nvim" },
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "markdown",
+      },
+    },
+  },
+  {
+    "barrett-ruth/live-server.nvim",
+    build = "pnpm add -g live-server",
+    config = true,
+  },
+  -- DBT Templater
+  {
+    "stevearc/conform.nvim",
+    opts = {
+      formatters = {
+        sqlfluff = {
+          stdin = false,
+          args = { "fix", "$FILENAME" },
+          timeout_ms = 10000,
+        },
+      },
+    },
   },
 }

@@ -16,7 +16,7 @@ vim.api.nvim_create_user_command("Finder", function()
   vim.fn.system("open -R " .. vim.fn.shellescape(file))
 end, { desc = "Open current file in Finder" })
 
-vim.api.nvim_create_user_command("SublimeText", function()
+vim.api.nvim_create_user_command("Sublime", function()
   local file = vim.fn.expand("%p")
   if file == "" then
     vim.notify("No file in current buffer", vim.log.levels.WARN)
