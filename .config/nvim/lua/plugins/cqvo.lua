@@ -15,31 +15,46 @@ return {
     },
   },
   -- Enable hidden files in picker
+  -- {
+  --   "folke/snacks.nvim",
+  --   opts = {
+  --     picker = {
+  --       hidden = true,
+  --       ignored = true,
+  --       finder = {
+  --         ignore_patterns = {
+  --           "**/node_modules/**",
+  --           "**/.git/**",
+  --           "**/*.log",
+  --         },
+  --       },
+  --       sources = {
+  --         files = {
+  --           hidden = true,
+  --           ignored = true,
+  --         },
+  --       },
+  --     },
+  --   },
+  -- },
+  -- Augment CLI
   {
-    "folke/snacks.nvim",
-    opts = {
-      picker = {
-        hidden = true,
-        ignored = true,
-        finder = {
-          ignore_patterns = {
-            "node_modules",
-            ".git",
-          },
-        },
-        sources = {
-          files = {
-            hidden = true,
-            ignored = true,
-          },
-        },
+    "augmentcode/augment.vim",
+    init = function()
+      vim.g.augment_workspace_folders = { "~/workspace/ssr-frontend" }
+      vim.g.augment_disable_tab_mapping = true
+    end,
+    keys = {
+      {
+        "<C-y>",
+        function()
+          vim.cmd("call augment#Accept()")
+        end,
+        mode = "i",
+        desc = "Accept suggestion (augment.nvim)",
       },
     },
   },
-  -- Augment CLI
-  -- {
-  -- "augmentcode/augment.vim",
-  -- },
   -- Mermaid Playground
   {
     "selimacerbas/mermaid-playground.nvim",
@@ -68,6 +83,19 @@ return {
           args = { "fix", "$FILENAME" },
           timeout_ms = 10000,
         },
+      },
+    },
+  },
+  {
+    "chrisgrieser/nvim-rip-substitute",
+    keys = {
+      {
+        "g/",
+        function()
+          require("nvim-rip-substitute").sub()
+        end,
+        mode = { "n", "x" },
+        desc = "Rip Substitute",
       },
     },
   },
