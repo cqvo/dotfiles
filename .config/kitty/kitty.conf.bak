@@ -1,3 +1,31 @@
+include themes/cyberdream.conf
+
+# Map Cmd to Ctrl for common Neovim shortcuts 
+map cmd+d send_text all \x04
+map cmd+u send_text all \x15
+map cmd+f send_text all \x06
+map cmd+b send_text all \x02
+# map cmd+w send_text all \x17
+# map cmd+r send_text all \x12
+map cmd+o send_text all \x0f
+map cmd+i send_text all \x09
+# map cmd+[ send_text all \x1b
+# map cmd+] send_text all \x1d
+# map cmd+a send_text all \x01
+# map cmd+e send_text all \x05
+# map cmd+p send_text all \x10
+# map cmd+n send_text all \x0e
+# map cmd+l send_text all \x0c
+# map cmd+g send_text all \x07
+# map cmd+h send_text all \x08
+# map cmd+j send_text all \x0a
+# map cmd+k send_text all \x0b
+# map cmd+z send_text all \x1a
+
+# Vi mode
+scrollback_pager nvim +"source ~/.config/kitty/vi-mode.lua"
+map alt+s show_scrollback
+
 # vim:fileencoding=utf-8:foldmethod=marker
 
 #: Fonts {{{
@@ -2071,7 +2099,7 @@ background_blur 8
 #: use the background color of the currently active window and finally
 #: you can use an arbitrary color, such as #12af59 or red.
 
-# macos_option_as_alt no
+macos_option_as_alt yes
 
 #: Use the Option key as an Alt key on macOS. With this set to no,
 #: kitty will use the macOS native Option+Key to enter Unicode
@@ -2926,10 +2954,10 @@ background_blur 8
 
 
 # BEGIN_KITTY_FONTS
-font_family      family='Iosevka Term' style=Extended
-bold_font        family='Iosevka Term' style='Bold Extended'
-italic_font      family='Iosevka Term' style='Extended Italic'
-bold_italic_font family='Iosevka Term' style='Bold Extended Italic'
+font_family      family="JetBrainsMono Nerd Font Mono"
+bold_font        family='JetBrainsMono Nerd Font Mono' style=Bold
+italic_font      auto
+bold_italic_font family='JetBrainsMono Nerd Font Mono' style='Bold Italic'
 # END_KITTY_FONTS
 
 
