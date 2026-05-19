@@ -126,7 +126,27 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-# neovim
-alias mvim='NVIM_APPNAME="cqvo.nvim" nvim'
 # Added by dbt Fusion extension
 alias dbtf=/Users/chris/.local/bin/dbt
+
+# jEnv
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+
+alias lzd='lazydocker'
+
+eval "$(zoxide init zsh)"
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /Users/chris/.config/tfenv/versions/1.9.8/terraform terraform
+ alias tf='terraform'
+
+# gcloud
+export PATH=$HOMEBREW_PREFIX/share/google-cloud-sdk/bin:"$PATH"
+
+# bun completions
+[ -s "/Users/chris/.bun/_bun" ] && source "/Users/chris/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
