@@ -1,2 +1,8 @@
 **/.DS_Store
 **/node_modules
+
+# Vim/Neovim swap & temp files
+*.swp
+*.swo
+*.swn
+*~
