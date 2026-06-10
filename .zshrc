@@ -112,7 +112,9 @@ export PATH="$PATH:/Users/chris/.local/bin"
 
 # AWS SSO GFM
 export VAULT_ADDR=https://vault.internal.gfm-ops.com
-alias vaultlogin="vault login -method=aws role=aws-iam-gfm-dev $(aws configure export-credentials --format process | jq -jr '"aws_access_key_id=", .AccessKeyId, " ", "aws_secret_access_key=", .SecretAccessKey, " ", "aws_security_token=", .SessionToken')"
+vaultlogin() {
+  vault login -method=aws role=aws-iam-gfm-dev $(aws configure export-credentials --format process | jq -jr '"aws_access_key_id=", .AccessKeyId, " ", "aws_secret_access_key=", .SecretAccessKey, " ", "aws_security_token=", .SessionToken')
+}
 alias k=/usr/local/bin/kubectl
 alias vaultui='open -a "Google Chrome" $VAULT_ADDR/ui/vault'
 alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
