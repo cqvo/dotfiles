@@ -72,7 +72,7 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git fzf zoxide
-    terraform alias-finder
+    terraform alias-finder thefuck
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -161,3 +161,5 @@ alias fzs='subl $(fzf -m --preview="bat --color=always {}")'
 alias gcmp='gcm && gl' # git checkout main && git pull
 alias gcsp='gco staging && gl' # git checkout staging && git pull
 alias gcdp='gcd && gl' # git checkout dev && git pull
+
+eval $(thefuck --alias)
