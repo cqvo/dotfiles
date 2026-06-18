@@ -72,7 +72,7 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git fzf zoxide
-    terraform alias-finder thefuck
+    terraform alias-finder
     fancy-ctrl-z nvm
 )
 
