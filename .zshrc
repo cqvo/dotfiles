@@ -152,3 +152,14 @@ export PATH=$HOMEBREW_PREFIX/share/google-cloud-sdk/bin:"$PATH"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# fzf
+source <(fzf --zsh)
+# alias st='open "/Users/chris/Applications/Sublime Text.app"'
+# alias st='open -a Sublime Text'
+alias fzn='nvim $(fzf -m --preview="bat --color=always {}")'
+alias fzs='subl $(fzf -m --preview="bat --color=always {}")'
+
+alias gcmp='git checkout main && git pull'
+alias gcsp='git checkout staging && git pull'
+alias gcdp='git checkout dev && git pull'
