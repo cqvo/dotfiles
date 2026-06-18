@@ -72,6 +72,7 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git fzf zoxide
+    terraform
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -141,7 +142,6 @@ alias lzd='lazydocker'
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /Users/chris/.config/tfenv/versions/1.9.8/terraform terraform
- alias tf='terraform'
 
 # gcloud
 export PATH=$HOMEBREW_PREFIX/share/google-cloud-sdk/bin:"$PATH"
