@@ -73,6 +73,7 @@ ZSH_THEME="robbyrussell"
 plugins=(
     git fzf zoxide
     terraform alias-finder thefuck
+    fancy-ctrl-z
 )
 
 source $ZSH/oh-my-zsh.sh
