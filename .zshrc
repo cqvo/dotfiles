@@ -70,7 +70,9 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+    git fzf
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -154,9 +156,6 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 # fzf
-source <(fzf --zsh)
-# alias st='open "/Users/chris/Applications/Sublime Text.app"'
-# alias st='open -a Sublime Text'
 alias fzn='nvim $(fzf -m --preview="bat --color=always {}")'
 alias fzs='subl $(fzf -m --preview="bat --color=always {}")'
 
