@@ -14,6 +14,16 @@ return {
       colorscheme = "cyberdream",
     },
   },
+  -- Show more of the filepath in the statusline
+  {
+    "nvim-lualine/lualine.nvim",
+    opts = function(_, opts)
+      -- lualine_c[4] is LazyVim's pretty_path() filename component.
+      -- length = 6 shows up to ~6 path segments before collapsing the middle
+      -- with "…"; bump higher (or 0 = never truncate) to taste.
+      opts.sections.lualine_c[4] = { LazyVim.lualine.pretty_path({ length = 6 }) }
+    end,
+  },
   -- Enable hidden files in picker
   -- {
   --   "folke/snacks.nvim",
