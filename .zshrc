@@ -73,7 +73,7 @@ ZSH_THEME="robbyrussell"
 plugins=(
     git fzf zoxide
     terraform alias-finder thefuck
-    fancy-ctrl-z
+    fancy-ctrl-z nvm
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -170,3 +170,8 @@ zstyle ':omz:plugins:alias-finder' autoload yes # disabled by default
 zstyle ':omz:plugins:alias-finder' longer yes # disabled by default
 zstyle ':omz:plugins:alias-finder' exact yes # disabled by default
 zstyle ':omz:plugins:alias-finder' cheaper yes # disabled by default
+
+# nvm
+zstyle ':omz:plugins:nvm' lazy yes
+zstyle ':omz:plugins:nvm' lazy-cmd eslint prettier typescript
+zstyle ':omz:plugins:nvm' autoload yes
