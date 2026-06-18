@@ -71,7 +71,7 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    git fzf
+    git fzf zoxide
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -138,8 +138,6 @@ export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
 alias lzd='lazydocker'
-
-eval "$(zoxide init zsh)"
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /Users/chris/.config/tfenv/versions/1.9.8/terraform terraform
