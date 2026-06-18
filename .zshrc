@@ -157,6 +157,7 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 alias fzn='nvim $(fzf -m --preview="bat --color=always {}")'
 alias fzs='subl $(fzf -m --preview="bat --color=always {}")'
 
-alias gcmp='git checkout main && git pull'
-alias gcsp='git checkout staging && git pull'
-alias gcdp='git checkout dev && git pull'
+# git convenience aliases
+alias gcmp='gcm && gl' # git checkout main && git pull
+alias gcsp='gco staging && gl' # git checkout staging && git pull
+alias gcdp='gcd && gl' # git checkout dev && git pull
