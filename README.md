@@ -15,10 +15,10 @@ Includes configurations for:
 brew install stow
 
 # clone the repo
-git clone https://github.com/cqvo/dotfiles.git ~/.dotfiles
+git clone https://github.com/cqvo/dotfiles.git ~/dotfiles
 
 # stow the dotfiles
-cd ~/.dotfiles
+cd ~/dotfiles
 stow .
 ```
 
@@ -30,8 +30,8 @@ root creates a symlink in `~` for every tracked file, pointing back into the
 repo. For example:
 
 ```
-~/.zshrc                  ->  ~/.dotfiles/.zshrc
-~/.config/kitty/kitty.conf ->  ~/.dotfiles/.config/kitty/kitty.conf
+~/.zshrc                  ->  ~/dotfiles/.zshrc
+~/.config/kitty/kitty.conf ->  ~/dotfiles/.config/kitty/kitty.conf
 ```
 
 This keeps every config tracked in one git repo while the apps that read them
@@ -45,11 +45,11 @@ symlink edits the repo file directly** — they are the same file on disk. So yo
 can edit in either place and it just works:
 
 ```bash
-nvim ~/.zshrc                  # edits ~/.dotfiles/.zshrc via the symlink
-nvim ~/.dotfiles/.zshrc        # edits the same file directly
+nvim ~/.zshrc                  # edits ~/dotfiles/.zshrc via the symlink
+nvim ~/dotfiles/.zshrc        # edits the same file directly
 ```
 
-Either way, `cd ~/.dotfiles && git diff` shows the change, ready to commit. You
+Either way, `cd ~/dotfiles && git diff` shows the change, ready to commit. You
 do **not** need to re-run stow after editing an already-stowed file.
 
 > ⚠️ Some apps rewrite their config file in place (replacing the symlink with a
