@@ -1,6 +1,5 @@
 **/.DS_Store
 **/node_modules
-.env
 
 # Vim/Neovim swap & temp files
 *.swp
@@ -9,8 +8,16 @@
 *~
 
 # hermes-agent
-.hermes/auth.json
-.hermes/bin
-.hermes/cache
-.hermes/logs
-.hermes/.update_check
+.hermes/*
+!.hermes/config.yaml
+!.hermes/SOUL.md
+
+# env
+.env
+*.env
+**/.env
+**/*.env
+!.env.example
+!**/.env.example
+!*.env.example
+!**/*.env.example
