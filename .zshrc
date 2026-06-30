@@ -74,6 +74,7 @@ plugins=(
     git fzf zoxide
     terraform alias-finder
     fancy-ctrl-z nvm
+    direnv
 )
 
 source $ZSH/oh-my-zsh.sh

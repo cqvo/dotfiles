@@ -21,3 +21,4 @@
 !**/.env.example
 !*.env.example
 !**/*.env.example
+.envrc
