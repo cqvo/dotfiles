@@ -74,7 +74,7 @@ plugins=(
     git fzf zoxide
     terraform alias-finder
     fancy-ctrl-z nvm
-    direnv
+    direnv vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -176,3 +176,10 @@ zstyle ':omz:plugins:alias-finder' cheaper yes # disabled by default
 zstyle ':omz:plugins:nvm' lazy yes
 zstyle ':omz:plugins:nvm' lazy-cmd eslint prettier typescript
 zstyle ':omz:plugins:nvm' autoload yes
+
+# vi-mode config
+VI_MODE_SET_CURSOR=true
+VI_MODE_CURSOR_NORMAL=2
+VI_MODE_CURSOR_VISUAL=6
+VI_MODE_CURSOR_INSERT=6
+VI_MODE_CURSOR_OPPEND=0
